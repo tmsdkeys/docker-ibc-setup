@@ -2,8 +2,8 @@
   "type": "cosmos",
   "value": {
     "key": "alice",
-    "chain-id": "checkersa",
-    "rpc-addr": "http://checkersa:26657",
+    "chain-id": "<chain-id-a>",
+    "rpc-addr": "http://chain-a:26657",
     "grpc-addr": "",
     "account-prefix": "cosmos",
     "keyring-backend": "test",

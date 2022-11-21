@@ -101,17 +101,17 @@ port = 3001
 [[chains]]
 
 # Specify the chain ID. Required
-id = 'checkersa'
+id = '<chain-id-a>'
 
 # Specify the RPC address and port where the chain RPC server listens on. Required
-rpc_addr = 'http://checkersa:26657'
+rpc_addr = 'http://chain-a:26657'
 
 # Specify the GRPC address and port where the chain GRPC server listens on. Required
-grpc_addr = 'http://checkersa:9090'
+grpc_addr = 'http://chain-a:9090'
 
 # Specify the WebSocket address and port where the chain WebSocket server
 # listens on. Required
-websocket_addr = 'ws://checkersa:26657/websocket'
+websocket_addr = 'ws://chain-a:26657/websocket'
 
 # Specify the maximum amount of time (duration) that the RPC requests should
 # take before timing out. Default: 10s (10 seconds)
@@ -239,10 +239,10 @@ memo_prefix = ''
 # fee_granter = ''
 
 [[chains]]
-id = 'checkersb'
-rpc_addr = 'http://checkersb:26657'
-grpc_addr = 'http://checkersb:9090'
-websocket_addr = 'ws://checkersb:26657/websocket'
+id = '<chain-id-b>'
+rpc_addr = 'http://chain-b:26657'
+grpc_addr = 'http://chain-b:9090'
+websocket_addr = 'ws://chain-b:26657/websocket'
 rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'bob'

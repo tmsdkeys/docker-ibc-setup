@@ -1,15 +1,15 @@
 {
   "src": {
-    "chain-id": "checkersa",
+    "chain-id": "",
     "port-id": "transfer",
     "order": "unordered",
-    "version": "ics20-1"
+    "version": ""
   },
   "dst": {
-    "chain-id": "checkersb",
+    "chain-id": "",
     "port-id": "transfer",
     "order": "unordered",
-    "version": "ics20-1"
+    "version": ""
   },
   "strategy": { "type": "naive" }
 }
