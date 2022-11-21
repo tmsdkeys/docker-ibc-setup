@@ -1,0 +1,25 @@
+# Use Golang Docker Image
+FROM golang:1.18
+
+# Set working dir
+WORKDIR /home/<chain-name>
+
+# Install tools
+RUN apt-get install curl git
+
+# Install ignite
+RUN curl -L https://get.ignite.com/cli@<desired_version>! | bash
+
+# Copy local repository
+ADD <path-to-local-repo> /home/<chain-name>
+
+# OR...
+# Clone a GitHub repository
+RUN git clone <github-url>
+
+# Copy serve script
+COPY ../scripts/run-chain.sh /home/<chain-name>
+RUN chmod +x ./run-chain.sh
+
+ENTRYPOINT ["/bin/bash", "-c", "/home/<chain-name>/run-chain.sh"]
+EXPOSE 26657 1317 4500
