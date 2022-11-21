@@ -1,0 +1,15 @@
+{
+  "src": {
+    "chain-id": "",
+    "port-id": "transfer",
+    "order": "unordered",
+    "version": ""
+  },
+  "dst": {
+    "chain-id": "",
+    "port-id": "transfer",
+    "order": "unordered",
+    "version": ""
+  },
+  "strategy": { "type": "naive" }
+}

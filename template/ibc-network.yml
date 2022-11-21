@@ -1,0 +1,49 @@
+# start with docker-compose -f tokentransfer.yml up -d
+
+version: '3'
+
+services:
+
+  chain-a:
+    container_name: chain-a
+    image: "chain-a"
+    ports:
+      - "26657:26657"
+      - "1317:1317"
+      - "4500:4500"
+    networks:
+      - ibc-network
+
+  chain-b:
+    container_name: chain-b
+    image: "chain-b"
+    ports:
+      - "26658:26657"
+      - "1318:1317"
+      - "4501:4500"
+    networks:
+      - ibc-network
+
+  # you can pick your relayer of choice here
+  hermes-relayer:
+    # profiles: ["hermes"]
+    # build: ./relayer_hermes
+    container_name: hermes-relayer
+    image: "hermes-relayer"
+    tty: true
+    stdin_open: true
+    networks:
+      - ibc-network
+
+  go-relayer:
+    # profiles: ["go"]
+    # build: ./relayer_go
+    container_name: go-relayer
+    image: "go-relayer"
+    tty: true
+    stdin_open: true
+    networks:
+      - ibc-network
+
+networks:
+    ibc-network:
