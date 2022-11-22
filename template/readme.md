@@ -6,10 +6,16 @@ The setup below offers an straightforward way to setup a Docker test environment
 
 To build the **Docker image for the chains**, clone the repository and run:
 
-```
-$ cd docker-ibc-setup/dockerfiles
-$ docker build -f Dockerfile.chain . -t $CHAIN-NAME --no-cache
-```
+- When the chain's files are stored locally (folder in root directory):
+    ```
+    $ cd docker-ibc-setup/dockerfiles
+    $ docker build -f Dockerfile.local_chain . -t $CHAIN-NAME --no-cache
+    ```
+- When the chain's files are stored in a GitHub repo:
+    ```
+    $ cd docker-ibc-setup/dockerfiles
+    $ docker build -f Dockerfile.gh_chain . -t $CHAIN-NAME -build-arg github-url=$GITHUB-URL --no-cache
+    ```
 
 In addition, you will need to build the **relayer image**:
 
