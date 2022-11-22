@@ -14,7 +14,7 @@ To build the **Docker image for the chains**, clone the repository and run:
 - When the chain's files are stored in a GitHub repo:
     ```
     $ cd docker-ibc-setup/dockerfiles
-    $ docker build -f Dockerfile.gh_chain . -t $CHAIN-NAME -build-arg github-url=$GITHUB-URL --no-cache
+    $ docker build -f Dockerfile.gh_chain . -t $CHAIN-NAME --build-arg github-url=$GITHUB-URL --no-cache
     ```
 
 In addition, you will need to build the **relayer image**:
