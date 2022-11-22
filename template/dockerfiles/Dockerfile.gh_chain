@@ -10,12 +10,9 @@ RUN apt-get install curl git
 # Install ignite
 RUN curl -L https://get.ignite.com/cli@<desired_version>! | bash
 
-# Copy local repository
-ADD <path-to-local-repo> /home/<chain-name>
-
-# OR...
 # Clone a GitHub repository
-RUN git clone <github-url>
+ARG github-url
+RUN git clone ${github-url}
 
 # Copy serve script
 COPY ../scripts/run-chain.sh /home/<chain-name>
