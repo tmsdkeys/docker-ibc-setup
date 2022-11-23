@@ -1,3 +1,0 @@
-[submodule "client"]
-	path = client
-	url = git@github.com:cosmos/academy-checkers-ui.git
