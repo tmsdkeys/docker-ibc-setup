@@ -2,14 +2,14 @@
 
 ## Build Docker images
 
-to build the **image for the checkers game with the leaderboard**, clone the repository and run:
+To build the **image for the checkers game with the leaderboard**, clone the repository and run:
 
 ```
 $ cd cosmos-ibc-docker/modular
 $ docker build -f Dockerfile-checkers . -t checkers --no-cache
 ```
 
-and to build the **image for the leaderbaord chain**:
+And to build the **image for the leaderbaord chain**:
 
 ```
 $ cd cosmos-ibc-docker/modular
@@ -59,7 +59,36 @@ export COLT=cosmos1a3qmcqgdztx7fctx9asagw8nmj66sr5grg5z97
 export DAVE=cosmos173czeq76k0lh0m6zcz72yu6zj8c6d0tf294w5k
 ```
 
-## Create a game and play it until the end
+:warning: Do this after having jumped into the container terminal.
+
+## Send tokens cross-chain via IBC (ICS20)
+
+When building a blockchain with Ignite CLI, the Cosmos SDK chain you end up with, will have the core IBC module included by default, as well as the `transfer` module, allowing to send fungible tokens cross-chain over IBC according to the ICS20 standard.
+
+This means we can try this out without any extra dev work required.
+
+For development and testing purposes, the relayer software (`hermes` or `rly`) can trigger the transfer, but we'll use the chain binary to let a user initiate the transaction as is the case in the real world.
+
+Remember to jump into the `checkers` container:
+
+```
+$ docker exec -it checkers bash
+```
+and send the tokens from the `checkers` to the `leaderboard` chain.
+```bash
+$ checkersd tx ibc-transfer transfer transfer transfer $DAVE 101token --from $ALICE
+```
+You can check the balances for Dave on the destination chain, remember to first jump into the `leaderboard` container:
+```
+$ docker exec -it checkers bash
+```
+and check the balance:
+```bash
+$ leaderboardd q bank balances $DAVE
+```
+
+
+## Custom checkers IBC application: Create a game and play it until the end
 
 The easiest way to do so is to start the test script, jump into container:
 
