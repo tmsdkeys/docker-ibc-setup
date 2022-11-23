@@ -15,7 +15,7 @@ rly tx link checkers -d -t 3s --src-port leaderboard --dst-port leaderboard --ve
 
 # add path for ics20 (including already the client and connection info
 # and create an extra channel on top of the connection
-rly paths add-dir paths/checkers
+rly paths add-dir paths/transfer
 rly tx channel ics20 --src-port transfer --dst-port transfer --order unordered --version ics20-1
 
 

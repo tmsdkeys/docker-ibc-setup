@@ -76,7 +76,7 @@ $ docker exec -it checkers bash
 ```
 and send the tokens from the `checkers` to the `leaderboard` chain.
 ```bash
-$ checkersd tx ibc-transfer transfer transfer transfer $DAVE 101token --from $ALICE
+$ checkersd tx ibc-transfer transfer transfer channel-1 $DAVE 101token --from $ALICE
 ```
 You can check the balances for Dave on the destination chain, remember to first jump into the `leaderboard` container:
 ```
@@ -86,9 +86,19 @@ and check the balance:
 ```bash
 $ leaderboardd q bank balances $DAVE
 ```
+You'll find the ibc-denom in the formate: `ibc/<hash>` , which you can trace back to the path the token has taken:
+```bash
+$ leaderboardd q ibc-transfer denom-trace <hash>
+```
+resulting in:
+```bash
+denom_trace:
+  base_denom: token
+  path: transfer/channel-1
+```
 
 
-## Custom checkers IBC application: Create a game and play it until the end
+## (Optional) Custom checkers IBC application: Create a game and play it until the end
 
 The easiest way to do so is to start the test script, jump into container:
 
