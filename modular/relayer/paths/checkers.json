@@ -3,7 +3,7 @@
       "chain-id":"checkers",
       "port-id":"leaderboard",
       "order":"unordered",
-      "version":"checkers-1"
+      "version":"leaderboard-1"
    },
    "dst":{
       "chain-id":"leaderboard",

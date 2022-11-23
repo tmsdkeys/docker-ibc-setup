@@ -1,7 +1,7 @@
 {
   "type": "cosmos",
   "value": {
-    "key": "alice",
+    "key": "colt",
     "chain-id": "leaderboard",
     "rpc-addr": "http://leaderboard:26657",
     "grpc-addr": "",
