@@ -1,5 +1,7 @@
 # Test Checkers leaderboard extension
 
+Presentation can be found [here](https://docs.google.com/presentation/d/1ITvUnLNESxaAD46qhunH7K5XcFH5omDtJR0MF9v2Ulg/edit?usp=sharing)
+
 ## Build Docker images
 
 To build the **image for the checkers game with the leaderboard**, clone the repository and run:
