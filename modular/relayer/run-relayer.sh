@@ -11,4 +11,5 @@ rly keys restore leaderboard colt "train okay curtain host enact attend boring p
 rly keys restore leaderboard dave "define envelope federal move soul panel purity language memory illegal little twin borrow menu mule vote alter bright must deal sight muscle weather rug"
 
 rly tx link checkers -d -t 3s --src-port leaderboard --dst-port leaderboard --version leaderboard-1
+rly tx channel ics20 --src-port transfer --dst-port transfer --order unordered --version ics20-1
 rly start checkers

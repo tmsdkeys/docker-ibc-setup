@@ -1,0 +1,17 @@
+{
+   "src":{
+      "chain-id":"checkers",
+      "port-id":"transfer",
+      "order":"unordered",
+      "version":"ics20-1"
+   },
+   "dst":{
+      "chain-id":"leaderboard",
+      "port-id":"transfer",
+      "order":"unordered",
+      "version":"ics20-1"
+   },
+   "strategy":{
+      "type":"naive"
+   }
+}
